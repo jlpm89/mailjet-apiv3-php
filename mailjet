@@ -1,0 +1,24 @@
+<?php
+
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SetFrom("notificaciones.subsidio@comfaguajira.com",'Notificaciones web Comfaguajira');
+    #$mail->FromName = "Notificaciones web Comfaguajira";
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'tls';  
+    $mail->Username = '98063e266f839f93b62f751490c8e1cc';
+    $mail->Password = '6e48a00aa502b28094b13ac738cc57aa';
+    $mail->Port = 587;
+    $mail->Host = 'in-v3.mailjet.com';
+    $mail->Sender = strtolower("notificaciones.subsidio@comfaguajira.com");
+    $mail->SMTPDebug = 1;
+    $mail->AddReplyTo("notificaciones.subsidio@comfaguajira.com", "Notificaciones web Comfaguajira");
+    $mail->AddAddress($correo, $nombre);
+    $mail->WordWrap = 50;
+    $mail->IsHTML(true);
+    $mail->Subject = $asunto;
+    $mail->Body = $mcontenido;
+    $mail->AltBody = "";
+
+
+        ?>
